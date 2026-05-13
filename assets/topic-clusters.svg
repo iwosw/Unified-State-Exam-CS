@@ -1,0 +1,35 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-clusters" x1="42" y1="42" x2="596" y2="382" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#151C32"/>
+      <stop offset="1" stop-color="#09101F"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#bg-clusters)"/>
+  <circle cx="118" cy="76" r="52" fill="#79E1C3" fill-opacity="0.16"/>
+  <circle cx="528" cy="86" r="64" fill="#FFBF73" fill-opacity="0.12"/>
+  <text x="64" y="74" fill="#F5F7FF" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">Cluster analysis</text>
+  <text x="64" y="104" fill="#B7BFD5" font-family="Inter, Arial, sans-serif" font-size="16">connected groups, medoids, final formula</text>
+
+  <rect x="62" y="136" width="520" height="222" rx="28" fill="#0F152A" stroke="#24345E"/>
+  <circle cx="164" cy="202" r="9" fill="#8E83FF"/>
+  <circle cx="188" cy="228" r="9" fill="#8E83FF"/>
+  <circle cx="212" cy="210" r="9" fill="#8E83FF"/>
+  <circle cx="182" cy="188" r="12" fill="#FF7FA7"/>
+
+  <circle cx="334" cy="236" r="9" fill="#79E1C3"/>
+  <circle cx="360" cy="260" r="9" fill="#79E1C3"/>
+  <circle cx="388" cy="236" r="9" fill="#79E1C3"/>
+  <circle cx="360" cy="224" r="12" fill="#FFBF73"/>
+
+  <circle cx="468" cy="186" r="9" fill="#FFBF73"/>
+  <circle cx="492" cy="208" r="9" fill="#FFBF73"/>
+  <circle cx="516" cy="184" r="9" fill="#FFBF73"/>
+  <circle cx="492" cy="176" r="12" fill="#FF7FA7"/>
+
+  <ellipse cx="184" cy="208" rx="70" ry="48" stroke="#4E64AB" stroke-width="3" stroke-dasharray="8 8"/>
+  <ellipse cx="360" cy="242" rx="72" ry="52" stroke="#4E64AB" stroke-width="3" stroke-dasharray="8 8"/>
+  <ellipse cx="492" cy="192" rx="70" ry="46" stroke="#4E64AB" stroke-width="3" stroke-dasharray="8 8"/>
+
+  <text x="86" y="392" fill="#D9E2FF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">group points  choose center  apply final scaling rule</text>
+</svg>

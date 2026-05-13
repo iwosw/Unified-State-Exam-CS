@@ -24,30 +24,52 @@
       </nav>
 
       <div class="hero__content" id="top">
-        <p class="eyebrow">ЕГЭ по информатике • Python • Java • C++ • Rust</p>
-        <h1>Красивые шпаргалки по каждому заданию ЕГЭ</h1>
-        <p class="hero__lead">
-          Реальные типы заданий ЕГЭ `1-27`, короткие алгоритмы решения и кодовые каркасы на 4 языках.
-        </p>
+        <div class="hero__layout">
+          <div class="hero__copy">
+            <p class="eyebrow">ЕГЭ по информатике • Python • Java • C++ • Rust</p>
+            <h1>Шпаргалки по каждому заданию ЕГЭ в более сильной подаче</h1>
+            <p class="hero__lead">
+              Реальные типы заданий ЕГЭ `1-27`, короткие алгоритмы решения, визуальные подсказки и кодовые каркасы на 4 языках.
+            </p>
 
-        <div class="hero__actions">
-          <a class="button button--primary" href="#tasks">Открыть шпаргалки</a>
-          <a class="button button--ghost" href="#types">Смотреть типы задач</a>
-        </div>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#tasks">Открыть шпаргалки</a>
+              <a class="button button--ghost" href="#types">Смотреть типы задач</a>
+            </div>
 
-        <div class="stats">
-          <div class="stat-card">
-            <strong>27</strong>
-            <span>номеров</span>
+            <div class="stats">
+              <div class="stat-card">
+                <strong>27</strong>
+                <span>номеров</span>
+              </div>
+              <div class="stat-card">
+                <strong>4</strong>
+                <span>языка</span>
+              </div>
+              <div class="stat-card">
+                <strong>2026</strong>
+                <span>актуальный фокус</span>
+              </div>
+            </div>
           </div>
-          <div class="stat-card">
-            <strong>4</strong>
-            <span>языка</span>
-          </div>
-          <div class="stat-card">
-            <strong>14+</strong>
-            <span>типов задач</span>
-          </div>
+
+          <aside class="hero__visual panel panel--visual">
+            <img class="hero__image" src="assets/hero-board.svg" alt="Иллюстрация сайта со шпаргалками по ЕГЭ">
+            <div class="hero__visual-badges">
+              <div class="hero__badge">
+                <strong>IP и маски</strong>
+                <span>13</span>
+              </div>
+              <div class="hero__badge">
+                <strong>Процессы</strong>
+                <span>22</span>
+              </div>
+              <div class="hero__badge">
+                <strong>Кластеры</strong>
+                <span>27</span>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </header>
@@ -97,6 +119,41 @@
             Структура номеров и тем сверена по актуальным материалам ФИПИ, сайту К. Полякова и тренажёрам КЕГЭ.
             Код в карточках - это короткий рабочий каркас, который адаптируется под конкретный вариант.
           </p>
+        </section>
+
+        <section class="focus" id="highlights">
+          <div class="tasks__header">
+            <div>
+              <p class="section-label">Фокусные Темы</p>
+              <h2>Номера, которые чаще всего хочется увидеть не в сухом виде</h2>
+            </div>
+          </div>
+          <div class="focus-grid">
+            <article class="focus-card panel">
+              <img src="assets/topic-ip.svg" alt="Иллюстрация по теме IP и маски">
+              <div class="focus-card__body">
+                <p class="section-label">Задание 13</p>
+                <h3>IP, маски и адрес сети</h3>
+                <p>Сделал визуально понятный блок для самой частой темы, где путаются в двоичной записи и подсетях.</p>
+              </div>
+            </article>
+            <article class="focus-card panel">
+              <img src="assets/topic-games.svg" alt="Иллюстрация по теме теории игр">
+              <div class="focus-card__body">
+                <p class="section-label">Задания 19-21</p>
+                <h3>Игровые позиции и глубина выигрыша</h3>
+                <p>Отдельный акцент на разницу между «есть ход» и «любой ход соперника», где чаще всего теряют баллы.</p>
+              </div>
+            </article>
+            <article class="focus-card panel">
+              <img src="assets/topic-clusters.svg" alt="Иллюстрация по теме кластерного анализа">
+              <div class="focus-card__body">
+                <p class="section-label">Задание 27</p>
+                <h3>Кластеры и центры групп</h3>
+                <p>Добавлен более современный визуальный блок под актуальную тему кластеризации и центров кластеров.</p>
+              </div>
+            </article>
+          </div>
         </section>
 
         <section class="panel types" id="types">
