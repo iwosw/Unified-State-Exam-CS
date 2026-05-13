@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Красивые шпаргалки по заданиям ЕГЭ по информатике на Python, Java, C++ и Rust.">
+  <title>Шпаргалки ЕГЭ Информатика</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__backdrop"></div>
+      <nav class="topbar">
+        <a class="brand" href="#top">EGE CS Cheat Sheets</a>
+        <div class="topbar__links">
+          <a href="#tasks">Задания</a>
+          <a href="#types">Типы</a>
+          <a href="#usage">Как использовать</a>
+        </div>
+      </nav>
+
+      <div class="hero__content" id="top">
+        <p class="eyebrow">ЕГЭ по информатике • Python • Java • C++ • Rust</p>
+        <h1>Красивые шпаргалки по каждому заданию ЕГЭ</h1>
+        <p class="hero__lead">
+          Быстрые паттерны решения, ключевые идеи и короткие шаблоны кода для всех заданий `1-27`.
+        </p>
+
+        <div class="hero__actions">
+          <a class="button button--primary" href="#tasks">Открыть шпаргалки</a>
+          <a class="button button--ghost" href="#types">Смотреть типы задач</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <strong>27</strong>
+            <span>номеров</span>
+          </div>
+          <div class="stat-card">
+            <strong>4</strong>
+            <span>языка</span>
+          </div>
+          <div class="stat-card">
+            <strong>14+</strong>
+            <span>типов задач</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="panel panel--sticky">
+          <h2>Фильтры</h2>
+          <label class="search-field" for="task-search">
+            <span>Поиск</span>
+            <input id="task-search" type="search" placeholder="Например: графы, маски, 27">
+          </label>
+
+          <div class="filter-group">
+            <span class="filter-group__title">Язык</span>
+            <div class="chip-row" id="language-filters"></div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-group__title">Быстрый переход</span>
+            <div class="quick-nav" id="quick-nav"></div>
+          </div>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="panel intro" id="usage">
+          <div>
+            <p class="section-label">Как использовать</p>
+            <h2>Открывай номер, смотри идею, копируй шаблон</h2>
+          </div>
+          <div class="intro__grid">
+            <article>
+              <strong>1. Найди номер</strong>
+              <p>Все задания идут по порядку, с пометкой темы и ожидаемого навыка.</p>
+            </article>
+            <article>
+              <strong>2. Смотри паттерн</strong>
+              <p>У каждого номера есть краткая формула решения и типовые ошибки.</p>
+            </article>
+            <article>
+              <strong>3. Переключай язык</strong>
+              <p>Код-шаблон показывается отдельно для Python, Java, C++ и Rust.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel types" id="types">
+          <div>
+            <p class="section-label">Типы заданий</p>
+            <h2>Какие навыки покрывает шпаргалка</h2>
+          </div>
+          <div class="type-tags" id="type-tags"></div>
+        </section>
+
+        <section class="tasks" id="tasks">
+          <div class="tasks__header">
+            <div>
+              <p class="section-label">Задания</p>
+              <h2>Все номера ЕГЭ по информатике</h2>
+            </div>
+            <p class="tasks__counter" id="tasks-counter"></p>
+          </div>
+          <div class="task-grid" id="task-grid"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <template id="task-card-template">
+    <article class="task-card">
+      <div class="task-card__header">
+        <div>
+          <span class="task-number"></span>
+          <h3 class="task-title"></h3>
+        </div>
+        <span class="task-type"></span>
+      </div>
+      <p class="task-summary"></p>
+      <div class="task-points"></div>
+      <div class="task-tabs"></div>
+      <pre class="code-block"><code></code></pre>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
