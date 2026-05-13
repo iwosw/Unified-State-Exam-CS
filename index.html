@@ -27,7 +27,7 @@
         <p class="eyebrow">ЕГЭ по информатике • Python • Java • C++ • Rust</p>
         <h1>Красивые шпаргалки по каждому заданию ЕГЭ</h1>
         <p class="hero__lead">
-          Быстрые паттерны решения, ключевые идеи и короткие шаблоны кода для всех заданий `1-27`.
+          Реальные типы заданий ЕГЭ `1-27`, короткие алгоритмы решения и кодовые каркасы на 4 языках.
         </p>
 
         <div class="hero__actions">
@@ -58,7 +58,7 @@
           <h2>Фильтры</h2>
           <label class="search-field" for="task-search">
             <span>Поиск</span>
-            <input id="task-search" type="search" placeholder="Например: графы, маски, 27">
+            <input id="task-search" type="search" placeholder="Например: IP, маска, процесс, 27">
           </label>
 
           <div class="filter-group">
@@ -93,6 +93,10 @@
               <p>Код-шаблон показывается отдельно для Python, Java, C++ и Rust.</p>
             </article>
           </div>
+          <p class="intro__note">
+            Структура номеров и тем сверена по актуальным материалам ФИПИ, сайту К. Полякова и тренажёрам КЕГЭ.
+            Код в карточках - это короткий рабочий каркас, который адаптируется под конкретный вариант.
+          </p>
         </section>
 
         <section class="panel types" id="types">
@@ -128,6 +132,17 @@
       </div>
       <p class="task-summary"></p>
       <div class="task-points"></div>
+      <div class="task-sections">
+        <section class="task-section">
+          <h4>Обычно в условии</h4>
+          <ul class="task-list task-given"></ul>
+        </section>
+        <section class="task-section">
+          <h4>Как решать</h4>
+          <ol class="task-list task-steps"></ol>
+        </section>
+      </div>
+      <p class="task-answer"></p>
       <div class="task-tabs"></div>
       <pre class="code-block"><code></code></pre>
     </article>
