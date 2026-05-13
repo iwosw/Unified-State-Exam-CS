@@ -1,0 +1,34 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-ip" x1="60" y1="50" x2="580" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#151B31"/>
+      <stop offset="1" stop-color="#0A1020"/>
+    </linearGradient>
+    <linearGradient id="mask" x1="92" y1="92" x2="548" y2="92" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#79E1C3"/>
+      <stop offset="1" stop-color="#8E83FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#bg-ip)"/>
+  <circle cx="98" cy="86" r="54" fill="#8E83FF" fill-opacity="0.18"/>
+  <circle cx="536" cy="78" r="60" fill="#79E1C3" fill-opacity="0.14"/>
+  <text x="64" y="74" fill="#F5F7FF" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">IP and masks</text>
+  <text x="64" y="104" fill="#B7BFD5" font-family="Inter, Arial, sans-serif" font-size="16">network address, subnet size, bit logic</text>
+
+  <rect x="64" y="142" width="512" height="60" rx="18" fill="#121933" stroke="#2D3B6B"/>
+  <rect x="92" y="166" width="456" height="12" rx="6" fill="url(#mask)"/>
+  <text x="92" y="158" fill="#D7DFFF" font-family="JetBrains Mono, monospace" font-size="14">11111111 11111111 11111111 11110000</text>
+
+  <rect x="64" y="232" width="246" height="128" rx="24" fill="#10162B" stroke="#25335D"/>
+  <circle cx="132" cy="290" r="26" fill="#8E83FF"/>
+  <circle cx="236" cy="290" r="26" fill="#79E1C3"/>
+  <line x1="158" y1="290" x2="210" y2="290" stroke="#536AB4" stroke-width="6"/>
+  <text x="102" y="335" fill="#D9E2FF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">host and net</text>
+
+  <rect x="330" y="232" width="246" height="128" rx="24" fill="#10162B" stroke="#25335D"/>
+  <rect x="360" y="264" width="68" height="26" rx="13" fill="#171F3B"/>
+  <rect x="438" y="264" width="68" height="26" rx="13" fill="#171F3B"/>
+  <rect x="516" y="264" width="30" height="26" rx="13" fill="#FF7FA7"/>
+  <rect x="360" y="302" width="186" height="10" rx="5" fill="#2A355A"/>
+  <text x="360" y="336" fill="#FFBF73" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">count zeros  use 2^k</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-games" x1="52" y1="48" x2="596" y2="386" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#161A30"/>
+      <stop offset="1" stop-color="#0C1122"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#bg-games)"/>
+  <circle cx="116" cy="82" r="52" fill="#FF7FA7" fill-opacity="0.16"/>
+  <circle cx="538" cy="86" r="66" fill="#8E83FF" fill-opacity="0.16"/>
+  <text x="64" y="74" fill="#F5F7FF" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">Game strategies</text>
+  <text x="64" y="104" fill="#B7BFD5" font-family="Inter, Arial, sans-serif" font-size="16">P1, V1, P2 and guaranteed wins</text>
+
+  <circle cx="320" cy="160" r="30" fill="#FFBF73"/>
+  <circle cx="192" cy="248" r="24" fill="#8E83FF"/>
+  <circle cx="320" cy="248" r="24" fill="#79E1C3"/>
+  <circle cx="448" cy="248" r="24" fill="#FF7FA7"/>
+  <circle cx="144" cy="332" r="20" fill="#79E1C3" fill-opacity="0.94"/>
+  <circle cx="240" cy="332" r="20" fill="#FF7FA7" fill-opacity="0.94"/>
+  <circle cx="320" cy="332" r="20" fill="#8E83FF" fill-opacity="0.94"/>
+  <circle cx="400" cy="332" r="20" fill="#79E1C3" fill-opacity="0.94"/>
+  <circle cx="496" cy="332" r="20" fill="#FF7FA7" fill-opacity="0.94"/>
+
+  <line x1="303" y1="181" x2="209" y2="231" stroke="#546BB6" stroke-width="4"/>
+  <line x1="320" y1="190" x2="320" y2="224" stroke="#546BB6" stroke-width="4"/>
+  <line x1="337" y1="181" x2="431" y2="231" stroke="#546BB6" stroke-width="4"/>
+  <line x1="182" y1="269" x2="154" y2="311" stroke="#546BB6" stroke-width="4"/>
+  <line x1="202" y1="271" x2="230" y2="309" stroke="#546BB6" stroke-width="4"/>
+  <line x1="320" y1="272" x2="320" y2="308" stroke="#546BB6" stroke-width="4"/>
+  <line x1="438" y1="269" x2="410" y2="311" stroke="#546BB6" stroke-width="4"/>
+  <line x1="458" y1="271" x2="486" y2="309" stroke="#546BB6" stroke-width="4"/>
+
+  <text x="86" y="390" fill="#D9E2FF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">find a move  or prove every reply is bad for the opponent</text>
+</svg>
