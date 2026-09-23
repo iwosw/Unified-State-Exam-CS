@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Красивые шпаргалки по заданиям ЕГЭ по информатике на Python, Java, C++ и Rust.">
+  <meta name="description" content="Шпаргалки по ЕГЭ по информатике: 27 заданий, рабочие примеры на Python и инструкции по запуску.">
   <title>Шпаргалки ЕГЭ Информатика</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,7 @@
         <a class="brand" href="#top">EGE CS Cheat Sheets</a>
         <div class="topbar__links">
           <a href="#tasks">Задания</a>
+          <a href="#python-examples">Python-примеры</a>
           <a href="#types">Типы</a>
           <a href="#usage">Как использовать</a>
         </div>
@@ -26,15 +27,15 @@
       <div class="hero__content" id="top">
         <div class="hero__layout">
           <div class="hero__copy">
-            <p class="eyebrow">ЕГЭ по информатике • Python • Java • C++ • Rust</p>
-            <h1>Шпаргалки по каждому заданию ЕГЭ в более сильной подаче</h1>
+            <p class="eyebrow">ЕГЭ по информатике • Python • алгоритмы</p>
+            <h1>Разбирай задачу. Запускай код. Понимай ответ.</h1>
             <p class="hero__lead">
-              Реальные типы заданий ЕГЭ `1-27`, короткие алгоритмы решения, визуальные подсказки и кодовые каркасы на 4 языках.
+              27 номеров ЕГЭ, короткие алгоритмы решения и отдельные рабочие Python-примеры по присланным фотографиям — с объяснениями и ожидаемым результатом.
             </p>
 
             <div class="hero__actions">
               <a class="button button--primary" href="#tasks">Открыть шпаргалки</a>
-              <a class="button button--ghost" href="#types">Смотреть типы задач</a>
+              <a class="button button--ghost" href="#python-examples">Разобрать Python-код</a>
             </div>
 
             <div class="stats">
@@ -43,8 +44,8 @@
                 <span>номеров</span>
               </div>
               <div class="stat-card">
-                <strong>4</strong>
-                <span>языка</span>
+                <strong id="example-count">9</strong>
+                <span>Python-разборов</span>
               </div>
               <div class="stat-card">
                 <strong>2026</strong>
@@ -80,7 +81,7 @@
           <h2>Фильтры</h2>
           <label class="search-field" for="task-search">
             <span>Поиск</span>
-            <input id="task-search" type="search" placeholder="Например: IP, маска, процесс, 27">
+            <input id="task-search" type="search" placeholder="Например: IP, маска, метро, 27">
           </label>
 
           <div class="filter-group">
@@ -112,12 +113,12 @@
             </article>
             <article>
               <strong>3. Переключай язык</strong>
-              <p>Код-шаблон показывается отдельно для Python, Java, C++ и Rust.</p>
+              <p>В карточках заданий есть шаблоны на 4 языках; ниже — отдельные запускаемые Python-разборы.</p>
             </article>
           </div>
           <p class="intro__note">
-            Структура номеров и тем сверена по актуальным материалам ФИПИ, сайту К. Полякова и тренажёрам КЕГЭ.
-            Код в карточках - это короткий рабочий каркас, который адаптируется под конкретный вариант.
+            В каждом из 27 номеров есть открывающийся разбор с конкретным условием, шагами, проверенным Python-кодом и ответом.
+            Шаблоны на четырёх языках адаптируются под свой вариант, а разборы показывают полный пример запуска.
           </p>
         </section>
 
@@ -164,11 +165,33 @@
           <div class="type-tags" id="type-tags"></div>
         </section>
 
+        <section class="python-examples" id="python-examples">
+          <div class="tasks__header">
+            <div>
+              <p class="section-label">Практика • Python</p>
+              <h2>Коды с фотографий: готовые примеры</h2>
+              <p class="task-summary">Похожие переборы собраны по типам. Где условие на фото нечитабельно, приведён отдельный учебный пример — он так и помечен.</p>
+            </div>
+            <p class="tasks__counter" id="examples-counter"></p>
+          </div>
+          <div class="panel example-guide">
+            <h3>Как запустить и переделать под свою задачу</h3>
+            <ol class="task-list">
+              <li>Установи Python 3.10+ и открой PyCharm или любой текстовый редактор. Создай файл <code>solution.py</code>.</li>
+              <li>Найди тип по кнопкам ниже, скопируй код целиком и вставь в файл. Нажми Run в PyCharm или выполни <code>python solution.py</code> (на некоторых системах <code>python3 solution.py</code>).</li>
+              <li>Сверь вывод с полем «Проверка». Затем измени только данные, перечисленные в «Что менять», и проверь условия своего варианта.</li>
+            </ol>
+            <p>Все примеры используют только стандартную библиотеку. <code>product</code> допускает повторы, <code>permutations</code> — нет. В задачах на перебор следи за размером диапазона; в рекурсии сначала попробуй сократить выражение.</p>
+          </div>
+          <div class="example-filters" id="example-filters" aria-label="Фильтр Python-примеров"></div>
+          <div class="example-grid" id="example-grid"></div>
+        </section>
+
         <section class="tasks" id="tasks">
           <div class="tasks__header">
             <div>
               <p class="section-label">Задания</p>
-              <h2>Все номера ЕГЭ по информатике</h2>
+              <h2>27 заданий — 27 пошаговых разборов</h2>
             </div>
             <p class="tasks__counter" id="tasks-counter"></p>
           </div>
@@ -202,9 +225,39 @@
       <p class="task-answer"></p>
       <div class="task-tabs"></div>
       <pre class="code-block"><code></code></pre>
+      <details class="worked-example">
+        <summary>Открыть пошаговый разбор с ответом</summary>
+        <div class="worked-example__content">
+          <h4 class="worked-example__title"></h4>
+          <p class="worked-example__question"></p>
+          <ol class="task-list worked-example__steps"></ol>
+          <p class="worked-example__label">Полный запускаемый пример на Python</p>
+          <pre class="code-block"><code class="worked-example__code"></code></pre>
+          <p class="worked-example__result"></p>
+          <p class="worked-example__adapt"></p>
+        </div>
+      </details>
     </article>
   </template>
 
+  <template id="example-card-template">
+    <article class="example-card panel">
+      <div class="example-card__top"><span class="task-number"></span><span class="task-type"></span></div>
+      <h3 class="example-title"></h3>
+      <p class="example-origin"></p>
+      <p class="example-task"></p>
+      <div class="example-notes">
+        <p><strong>Как работает:</strong> <span class="example-idea"></span></p>
+        <p><strong>Что менять:</strong> <span class="example-change"></span></p>
+        <p><strong>Проверка:</strong> <code class="example-expected"></code></p>
+      </div>
+      <div class="example-code-heading"><span>solution.py</span><button class="copy-button" type="button" aria-label="Скопировать Python-код">Скопировать код</button></div>
+      <pre class="code-block"><code></code></pre>
+    </article>
+  </template>
+
+  <script src="python-examples.js"></script>
+  <script src="walkthroughs.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -159,7 +159,8 @@ h1 {
 
 .button,
 .chip,
-.task-tab {
+.task-tab,
+.copy-button {
   border: 1px solid transparent;
   border-radius: 999px;
   padding: 12px 18px;
@@ -184,6 +185,16 @@ h1 {
 .chip:hover,
 .task-tab:hover {
   transform: translateY(-1px);
+}
+
+.button:focus-visible,
+.chip:focus-visible,
+.task-tab:focus-visible,
+.copy-button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
 }
 
 .stat-card,
@@ -394,6 +405,103 @@ input[type="search"]::placeholder {
   margin-top: 20px;
 }
 
+.python-examples {
+  scroll-margin-top: 24px;
+}
+
+.example-guide {
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+.example-guide h3 {
+  margin-bottom: 12px;
+}
+
+.example-guide p {
+  color: var(--muted);
+  margin: 14px 0 0;
+}
+
+.example-guide code,
+.example-expected {
+  font-family: "JetBrains Mono", monospace;
+  color: var(--accent-2);
+  overflow-wrap: anywhere;
+}
+
+.example-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.example-card {
+  min-width: 0;
+  scroll-margin-top: 24px;
+}
+
+.example-card__top,
+.example-code-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.example-card__top {
+  margin-bottom: 10px;
+}
+
+.example-card__top .task-number {
+  margin: 0;
+}
+
+.example-title {
+  margin-bottom: 8px;
+}
+
+.example-origin {
+  font-size: 0.82rem;
+  color: var(--accent-3);
+}
+
+.example-task,
+.example-notes {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.example-notes p {
+  margin-bottom: 10px;
+}
+
+.example-notes strong {
+  color: var(--text);
+}
+
+.example-code-heading {
+  margin: 18px 0 10px;
+  font-family: "JetBrains Mono", monospace;
+  color: var(--accent-2);
+  font-size: 0.86rem;
+}
+
+.copy-button {
+  padding: 8px 12px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--panel-border);
+  font-size: 0.82rem;
+}
+
 .focus-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -539,6 +647,55 @@ input[type="search"]::placeholder {
   color: #dbe5ff;
 }
 
+.worked-example {
+  margin-top: 18px;
+  border: 1px solid rgba(121, 225, 195, 0.24);
+  border-radius: var(--radius-md);
+  background: rgba(121, 225, 195, 0.045);
+}
+
+.worked-example summary {
+  cursor: pointer;
+  padding: 16px 18px;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.worked-example summary:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
+.worked-example__content {
+  padding: 0 18px 18px;
+  line-height: 1.7;
+}
+
+.worked-example__question,
+.worked-example__result,
+.worked-example__adapt {
+  margin-top: 14px;
+}
+
+.worked-example__steps {
+  margin-bottom: 18px;
+}
+
+.worked-example__label,
+.worked-example__result {
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.worked-example__label {
+  margin: 0 0 10px;
+}
+
+.worked-example__adapt {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
 .hidden {
   display: none;
 }
@@ -555,7 +712,8 @@ input[type="search"]::placeholder {
 
   .focus-grid,
   .task-grid,
-  .intro__grid {
+  .intro__grid,
+  .example-grid {
     grid-template-columns: 1fr;
   }
 

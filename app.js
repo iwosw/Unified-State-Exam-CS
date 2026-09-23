@@ -1549,7 +1549,8 @@ const typeLabels = {
 
 const state = {
   language: "python",
-  query: ""
+  query: "",
+  exampleCategory: "Все"
 };
 
 const languageFilters = document.getElementById("language-filters");
@@ -1559,6 +1560,72 @@ const taskGrid = document.getElementById("task-grid");
 const taskTemplate = document.getElementById("task-card-template");
 const tasksCounter = document.getElementById("tasks-counter");
 const searchInput = document.getElementById("task-search");
+const exampleGrid = document.getElementById("example-grid");
+const exampleTemplate = document.getElementById("example-card-template");
+const exampleFilters = document.getElementById("example-filters");
+const examplesCounter = document.getElementById("examples-counter");
+const walkthroughByNumber = new Map(walkthroughs.map((walkthrough) => [walkthrough.number, walkthrough]));
+
+document.getElementById("example-count").textContent = pythonExamples.length;
+
+function renderExampleFilters() {
+  exampleFilters.replaceChildren();
+  ["Все", ...new Set(pythonExamples.map((example) => example.category))].forEach((category) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `chip${category === state.exampleCategory ? " is-active" : ""}`;
+    button.textContent = category;
+    button.setAttribute("aria-pressed", category === state.exampleCategory);
+    button.addEventListener("click", () => {
+      state.exampleCategory = category;
+      renderExampleFilters();
+      renderExamples();
+    });
+    exampleFilters.appendChild(button);
+  });
+}
+
+function renderExamples() {
+  exampleGrid.replaceChildren();
+  const query = state.query.trim().toLowerCase();
+  const visible = pythonExamples.filter((example) => {
+    const text = [example.number, example.title, example.category, example.task, example.idea, example.change].join(" ").toLowerCase();
+    return (state.exampleCategory === "Все" || example.category === state.exampleCategory) && text.includes(query);
+  });
+  examplesCounter.textContent = `Показано: ${visible.length} из ${pythonExamples.length}`;
+
+  if (!visible.length) {
+    const empty = document.createElement("p");
+    empty.className = "task-summary";
+    empty.textContent = "По этому запросу примеров нет. Попробуй другую тему или сбрось фильтр.";
+    exampleGrid.appendChild(empty);
+  }
+
+  visible.forEach((example) => {
+    const fragment = exampleTemplate.content.cloneNode(true);
+    const article = fragment.querySelector(".example-card");
+    article.id = `example-${example.id}`;
+    fragment.querySelector(".task-number").textContent = `Задание ${example.number}`;
+    fragment.querySelector(".task-type").textContent = example.category;
+    fragment.querySelector(".example-title").textContent = example.title;
+    fragment.querySelector(".example-origin").textContent = example.origin;
+    fragment.querySelector(".example-task").textContent = example.task;
+    fragment.querySelector(".example-idea").textContent = example.idea;
+    fragment.querySelector(".example-change").textContent = example.change;
+    fragment.querySelector(".example-expected").textContent = example.expected;
+    fragment.querySelector(".code-block code").textContent = example.code;
+    const copyButton = fragment.querySelector(".copy-button");
+    copyButton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(example.code);
+        copyButton.textContent = "Скопировано!";
+      } catch {
+        copyButton.textContent = "Выдели код вручную";
+      }
+    });
+    exampleGrid.appendChild(fragment);
+  });
+}
 
 function createLanguageFilters() {
   languages.forEach((language) => {
@@ -1668,6 +1735,21 @@ function renderTasks() {
     languages.forEach((language) => tabs.appendChild(createTab(language)));
     fragment.querySelector("code").textContent = codeTemplates[task.codeKey][state.language];
 
+    const walkthrough = walkthroughByNumber.get(task.number);
+    const details = fragment.querySelector(".worked-example");
+    details.id = `walkthrough-${task.number}`;
+    fragment.querySelector(".worked-example__title").textContent = walkthrough.title;
+    fragment.querySelector(".worked-example__question").textContent = walkthrough.question;
+    const workedSteps = fragment.querySelector(".worked-example__steps");
+    walkthrough.reasoning.forEach((step) => {
+      const li = document.createElement("li");
+      li.textContent = step;
+      workedSteps.appendChild(li);
+    });
+    fragment.querySelector(".worked-example__code").textContent = walkthrough.code;
+    fragment.querySelector(".worked-example__result").textContent = `Проверка: ${walkthrough.expected}`;
+    fragment.querySelector(".worked-example__adapt").textContent = `Для своего варианта: ${walkthrough.adapt}`;
+
     taskGrid.appendChild(fragment);
   });
 }
@@ -1686,9 +1768,12 @@ function render() {
 searchInput.addEventListener("input", (event) => {
   state.query = event.target.value;
   renderTasks();
+  renderExamples();
 });
 
 createLanguageFilters();
 createQuickNav();
 createTypeTags();
+renderExampleFilters();
+renderExamples();
 render();
