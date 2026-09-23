@@ -1,4 +1,4 @@
-// node check-python-examples.js — проверка примеров из фотоподборки и синтаксиса шаблонов.
+// node check-python-examples.js — проверка страниц, Python-разборов и шаблонов.
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const vm = require("node:vm");
@@ -38,7 +38,21 @@ for (const walkthrough of walkthroughs) {
 }
 
 const app = fs.readFileSync("app.js", "utf8");
-const templates = vm.runInNewContext(app.slice(0, app.indexOf("const tasks =")) + "\ncodeTemplates");
+const { tasks, codeTemplates: templates } = vm.runInNewContext(app + "\n({ tasks, codeTemplates })");
+assert.deepEqual(Array.from(tasks, (item) => item.number), Array.from({ length: 27 }, (_, i) => i + 1));
+assert(!fs.readFileSync("index.html", "utf8").includes('id="python-examples"'), "Фото-примеры не должны жить отдельно от заданий");
+for (const task of tasks) {
+  const page = fs.readFileSync(path.join("tasks", `${String(task.number).padStart(2, "0")}.html`), "utf8");
+  assert(page.includes(`data-task="${task.number}"`), `Неверный номер страницы ${task.number}`);
+  for (const asset of ["../styles.css", "../python-examples.js", "../walkthroughs.js", "../app.js", "../task-page.js"]) {
+    assert(page.includes(asset), `№${task.number}: нет ${asset}`);
+  }
+  assert(templates[task.codeKey], `№${task.number}: нет шаблона`);
+}
+for (const example of examples) {
+  assert(tasks.some((task) => task.number === example.number), `Фото ${example.id} не относится ни к одному заданию`);
+}
+console.log("Страницы заданий: ссылки и данные OK (27)");
 const snippets = Object.entries(templates).map(([name, versions]) => {
   assert.equal(typeof versions.python, "string", `${name}: отсутствует Python`);
   return [name, versions.python];
